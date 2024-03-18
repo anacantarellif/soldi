@@ -1,0 +1,37 @@
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --laranja: #C93400;
+    --branco: #FAF4FA;
+}
+
+body{
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* fonte */
+    color: var(--branco);
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 16;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 16px;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    background-color: var(--laranja);
+}
+h1{
+    font-size: 24px;
+    padding-bottom: 5%;
+}
