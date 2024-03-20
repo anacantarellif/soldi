@@ -1,1 +1,1 @@
-Esse projeto ainda está em desenvolvimento1
+Esse projeto ainda está em desenvolvimento!
