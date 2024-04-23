@@ -30,8 +30,64 @@ header{
     flex-direction: column;
     justify-content: left;
     background-color: var(--laranja);
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 50%;
+    padding-right: 50%;
 }
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#nivel1{
+    position: relative;
+    left: 20%;
+    
+}
+#nivel2{
+    position: relative;
+    right: 30%;
+    
+}
+#nivel3{
+    position: relative;
+    right: 30%;
+    
+}
+#nivel4{
+    position: relative;
+    left: 20%;
+    
+}
+
+img{
+    width: 6rem;
+    height: 6rem;
+}
+
+svg{
+    display: flex;
+    flex-direction: column;
+    justify-items: right;
+}
+
 h1{
     font-size: 24px;
     padding-bottom: 5%;
+}
+
+.icones{
+    width: 1.5rem;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+
 }
