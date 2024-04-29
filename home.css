@@ -73,6 +73,9 @@ svg{
     display: flex;
     flex-direction: column;
     justify-items: right;
+    position: absolute;
+    left: 65%;
+    top: 50%;
 }
 
 h1{
