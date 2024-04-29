@@ -1,0 +1,56 @@
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --laranja: #C93400;
+    --branco: #FAF4FA;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 16;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 16px;
+}
+
+main{
+    margin: 2rem;
+}
+
+.imagem{
+    display: flex;
+    justify-content: center;
+    padding: 2.75rem;
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 80%;
+}
+
+.botao{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20.5rem;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    background: var(--laranja);
+    color: var(--branco);
+    border-color: var(--branco);
+}
+
+a:link {text-decoration: none;}
