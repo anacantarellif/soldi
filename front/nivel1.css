@@ -1,0 +1,82 @@
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --laranja: #C93400;
+    --branco: #FAF4FA;
+}
+
+body{
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* fonte */
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 32;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    font-size: 1rem;
+    margin: 2rem;
+    
+}
+
+button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border-radius: 2rem;
+    border-color: var(--laranja);
+    cursor:pointer;
+    overflow: hidden; 
+    color: var(--laranja);
+    padding: 16px;
+    
+}
+
+.perguntas{
+    border-radius: 1rem;
+    border-width: 0.1rem;
+    border-color: #C93400;
+}
+
+.botoes{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-color: #C93400;
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 4rem;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.progress{
+    height: 15px;
+    background-color: var(--laranja);
+    position: relative;
+}
+
+.progress .progress-bar{
+   position: absolute;
+   height: 100%;
+   background-color: var(--laranja);
+   animation: progress-animation 6s infinite;
+}
+
+
+@keyframes progress-animation{
+    0% { width: 0%; }
+    
+    100% { width: 100%}
+    
+}
