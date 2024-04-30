@@ -41,6 +41,7 @@ main{
     flex-direction: column;
     gap: 2rem;
     margin-top: 2rem;
+    
 }
 
 #nivel1{
@@ -92,5 +93,7 @@ footer{
     flex-direction: row;
     justify-content: space-between;
     width: 80%;
+    position: fixed;
+    bottom: 0;
 
 }
