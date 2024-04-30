@@ -35,12 +35,23 @@ button{
     overflow: hidden; 
     color: var(--laranja);
     padding: 16px;
+    
+}
+
+.perguntas{
+    border-radius: 1rem;
+    border-width: 0.1rem;
+    border-color: #C93400;
 }
 
 .botoes{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    border-color: #C93400;
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 4rem;
 }
 
 main{

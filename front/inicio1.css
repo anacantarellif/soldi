@@ -26,6 +26,10 @@ body{
     
 }
 
+h1{
+    padding-bottom: 1rem ;
+}
+
 section{
     display: flex;
     flex-direction: column;
@@ -34,16 +38,21 @@ section{
 }
 
 button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     background-color: var(--laranja);
     background-repeat:no-repeat;
     border-radius: 2rem;
     border-color: var(--branco);
-    cursor:pointer;
-    overflow: hidden; 
+    cursor: pointer;
     color: var(--branco);
     width: 80%;
     height: 2.5rem;
-    align-items: flex-start;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 3rem;
 
 }
 
