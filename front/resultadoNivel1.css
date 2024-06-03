@@ -22,19 +22,16 @@ body{
     font-style: normal;
     font-variation-settings: "slnt" 0;
     font-size: 1rem;
-    margin: 2rem;
+    margin: 3rem;
     
 }
 
-h1{
-    padding-bottom: 1rem ;
+.perfil{
+    padding-bottom: 0.5rem;
 }
 
-section{
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
-    margin-top: 2rem;
+.titulo{
+    padding: 2rem;
 }
 
 button{
@@ -53,7 +50,4 @@ button{
     position: fixed;
     bottom: 0;
     margin-bottom: 3rem;
-
 }
-
-
