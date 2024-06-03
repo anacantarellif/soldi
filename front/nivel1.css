@@ -35,23 +35,17 @@ button{
     overflow: hidden; 
     color: var(--laranja);
     padding: 16px;
+    border-style: solid;
     
-}
-
-.perguntas{
-    border-radius: 1rem;
-    border-width: 0.1rem;
-    border-color: #C93400;
 }
 
 .botoes{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    border-color: #C93400;
     position: fixed;
     bottom: 0;
-    padding-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 main{
@@ -65,10 +59,9 @@ main{
     to { width: 100% }
   }
   
-  .progress {
+  /* .progress {
     background: #E7E7E7;
     position: relative;
-<<<<<<< HEAD
     height: 8px;
     width: 100%
   }
@@ -79,21 +72,25 @@ main{
     content: '';
     position: absolute;
     left: 0; top: 0; bottom: 0
+  } */
+
+
+  
+  .progress{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    height: 29px;
+    border-radius: 100px;
+    background: #BDBCBC;
   }
-=======
-}
-
-.progress .progress-bar{
-   position: absolute;
-   height: 100%;
-   background-color: var(--laranja);
-   animation: progress-animation 6s infinite;
-}
-
-
-@keyframes progress-animation{
-    0% { width: 0%; }
-    
-    100% { width: 100%}    
-}
->>>>>>> 7f557b94d3e631a3cc9877be46e39e3c3ece0b0c
+  .progress2{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    width: 10%;
+    height: 29px;
+    border-radius: 100px;
+    background: #C93400;
+  }
