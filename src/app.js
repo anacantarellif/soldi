@@ -7,7 +7,7 @@ const dotenv = require('dotenv').config();
 const usersRouter = require('./routes/usersRouter')
 
 app.set('port', process.env.PORT);
-app.set(express.json());
+app.use(express.json());
 
 // Habilitar utilização em nossa aplicação
 app.use('/api', usersRouter);
