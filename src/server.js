@@ -1,3 +1,7 @@
+// const app = require('./app')
+// const port = app.get('port')
+
+
 
 const express = require('express');
 const path = require('path');
@@ -63,7 +67,7 @@ app.get('/result', (req, res) => {
 
 // Redirecionar para a primeira pergunta ao acessar a raiz
 app.get('/', (req, res) => {
-    res.redirect('/home.html');
+    res.redirect('../views/home.html');
 });
 
 app.listen(PORT, () => {
