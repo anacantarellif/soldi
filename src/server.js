@@ -1,13 +1,10 @@
-// const app = require('./app')
-// const port = app.get('port')
-
-
-
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 
 const app = express();
 const PORT = 3000;
+const usersRouter = require('./routes/usersRouter')
 
 // Variáveis para armazenar as contagens de respostas
 let respostas = { A: 0, B: 0, C: 0 };
@@ -16,20 +13,19 @@ let respostas = { A: 0, B: 0, C: 0 };
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(cors());
 // Middleware para servir arquivos estáticos
 app.use(express.static(path.join(__dirname, '..', 'resultados')));
-app.use(express.static(path.join(__dirname, '..',  'front')));
-
-
+app.use(express.static(path.join(__dirname, '..', 'front')));
 
 // Rotas para perguntas (1 a 13)
 for (let i = 1; i <= 13; i++) {
-    app.get(`/nivel1/pergunta${i}`, (req, res) => res.sendFile(path.join(__dirname, '..',  'front', 'nivel1', `pergunta${i}.html`)));
+    app.get(`/nivel1/pergunta${i}`, (req, res) => res.sendFile(path.join(__dirname, '..', 'front', 'nivel1', `pergunta${i}.html`)));
 }
 
 // Rotas para resultados
-app.get('/nivel1/resultadoA', (req, res) => res.sendFile(path.join(__dirname,'..',  'resultados', 'nivel1', 'resultadoNivel1-A.html')));
-app.get('/nivel1/resultadoB', (req, res) => res.sendFile(path.join(__dirname,'..',  'resultados', 'nivel1', 'resultadoNivel1-B.html')));
+app.get('/nivel1/resultadoA', (req, res) => res.sendFile(path.join(__dirname, '..', 'resultados', 'nivel1', 'resultadoNivel1-A.html')));
+app.get('/nivel1/resultadoB', (req, res) => res.sendFile(path.join(__dirname, '..', 'resultados', 'nivel1', 'resultadoNivel1-B.html')));
 app.get('/nivel1/resultadoC', (req, res) => res.sendFile(path.join(__dirname, '..', 'resultados', 'nivel1', 'resultadoNivel1-C.html')));
 
 // Rota para lidar com a resposta do formulário nível 1
@@ -62,17 +58,18 @@ app.get('/result', (req, res) => {
             maxAnswer = key;
         }
     }
-    res.redirect(`/resultado${maxAnswer}.html`);
+    res.redirect(`/nivel1/resultado${maxAnswer}`);
 });
 
+// Rotas para perguntas do nível 2
 for (let i = 1; i <= 5; i++) {
-    app.get(`/nivel2/pergunta${i}`, (req, res) => res.sendFile(path.join(__dirname, 'front', 'nivel2', `pergunta${i}.html`)));
+    app.get(`/nivel2/pergunta${i}`, (req, res) => res.sendFile(path.join(__dirname, '..', 'front', 'nivel2', `pergunta${i}.html`)));
 }
 
 // Rotas para resultados corretos e errados do nível 2
 for (let i = 1; i <= 5; i++) {
-    app.get(`/nivel2/pergunta${i}/correto`, (req, res) => res.sendFile(path.join(__dirname, 'resultados', 'nivel2', `correto${i}.html`)));
-    app.get(`/nivel2/pergunta${i}/errado`, (req, res) => res.sendFile(path.join(__dirname, 'resultados', 'nivel2', `errado${i}.html`)));
+    app.get(`/nivel2/pergunta${i}/correto`, (req, res) => res.sendFile(path.join(__dirname, '..', 'resultados', 'nivel2', `correto${i}.html`)));
+    app.get(`/nivel2/pergunta${i}/errado`, (req, res) => res.sendFile(path.join(__dirname, '..', 'resultados', 'nivel2', `errado${i}.html`)));
 }
 
 // Rota para lidar com a resposta do formulário do nível 2
@@ -86,10 +83,12 @@ app.post('/nivel2/answer', (req, res) => {
     }
 });
 
-// Redirecionar para a primeira pergunta ao acessar a raiz
+// Redirecionar para a home ao acessar a raiz
 app.get('/', (req, res) => {
-    res.redirect('../front/home.html');
+    res.sendFile(path.join(__dirname, '..', 'front', 'home.html'));
 });
+
+app.use('/api', usersRouter)
 
 app.listen(PORT, () => {
     console.log(`Quiz app listening at http://localhost:${PORT}`);

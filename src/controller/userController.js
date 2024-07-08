@@ -1,19 +1,26 @@
 const connection = require('../config/db'); //configuração de acesso ao banco
-// const dotenv = require('dotenv').config();
+const dotenv = require('dotenv').config();
 
 async function storeUser(request, response){
+    console.log("aqui")
+
     //recuperar dados do forms
     const params = Array(
         request.body.name,
+        request.body.sobrenome,
+        request.body.nascimento,
+        request.body.perfil,
+        request.body.celular,
         request.body.email,
         request.body.senha
     );
-
+        console.log("aqui")
     //comando no banco para colocar as informações do formulário para o banco
-    const query = "INSERT INTO usuarios(name, email, senha) VALUES(?,?,?)";
+    const query = "INSERT INTO usuarios(name, sobrenone, nascimento, perfil, celular, email, senha) VALUES(?,?,?,?, ?,?,?)";
 
     //testando o banco
     connection.query(query, params, (err, results) => {
+        console.log(err, results)
         if (results) {
             response
                 .status(200)
@@ -32,4 +39,8 @@ async function storeUser(request, response){
                 })
         }
     })
+}
+
+module.exports={
+    storeUser
 }

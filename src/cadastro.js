@@ -8,27 +8,23 @@ button.onclick = async function(e) {
     let nascimento = document.querySelector('.cadastro .nascimento').value;
     let email = document.querySelector('.cadastro .email').value; 
     let celular = document.querySelector('.cadastro .celular').value; 
-    let senha = document.querySelector('.registro .senha').value;  
+    let senha = document.querySelector('.cadastro .senha').value;
+    let perfil = document.querySelector('.cadastro .perfil').value;
 
-    
-    let data = { nome, sobrenome, nascimento, email, celular, senha}; 
+    let data = { nome, sobrenome, nascimento, email, celular, senha, perfil }; 
 
     console.log("Dados que serão enviados:", data); 
 
+    
     try {
-        
-        const response = await fetch('http://localhost:3001/api/store/user', {
-            method: "post", 
+        const response = await fetch('http://localhost:3000/api/user/create', {
+            method: "POST", 
             headers: { "Content-Type": "application/json;charset=UTF-8" }, 
             body: JSON.stringify(data) 
         });
 
-       
-        if (!response.ok) {
-            throw new Error(`Erro na requisição: ${response.statusText}`); 
-        }
-
         let content = await response.json(); 
+        console.log(content)
 
         if (content.success) {
             alert("Sucesso"); 

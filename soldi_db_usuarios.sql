@@ -29,7 +29,7 @@ CREATE TABLE `usuarios` (
   `nascimento` date DEFAULT NULL,
   `email` varchar(255) NOT NULL,
   `senha` int NOT NULL,
-  `perfil` varchar(255) NOT NULL,
+  `perfil` varchar(255) NULL,
   `foto` varchar(255) DEFAULT NULL,
   `nivel` int DEFAULT '1',
   `sequencia_dias` int DEFAULT '0',
