@@ -62,12 +62,12 @@ app.get('/result', (req, res) => {
 });
 
 // Rotas para perguntas do nível 2
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i <= 7; i++) {
     app.get(`/nivel2/pergunta${i}`, (req, res) => res.sendFile(path.join(__dirname, '..', 'front', 'nivel2', `pergunta${i}.html`)));
 }
 
 // Rotas para resultados corretos e errados do nível 2
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i <= 7; i++) {
     app.get(`/nivel2/pergunta${i}/correto`, (req, res) => res.sendFile(path.join(__dirname, '..', 'resultados', 'nivel2', `correto${i}.html`)));
     app.get(`/nivel2/pergunta${i}/errado`, (req, res) => res.sendFile(path.join(__dirname, '..', 'resultados', 'nivel2', `errado${i}.html`)));
 }

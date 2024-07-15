@@ -9,9 +9,8 @@ button.onclick = async function(e) {
     let email = document.querySelector('.cadastro .email').value; 
     let celular = document.querySelector('.cadastro .celular').value; 
     let senha = document.querySelector('.cadastro .senha').value;
-    let perfil = document.querySelector('.cadastro .perfil').value;
 
-    let data = { nome, sobrenome, nascimento, email, celular, senha, perfil }; 
+    let data = {nome, sobrenome, nascimento, email, celular, senha}; 
 
     console.log("Dados que serão enviados:", data); 
 

@@ -6,17 +6,16 @@ async function storeUser(request, response){
 
     //recuperar dados do forms
     const params = Array(
-        request.body.name,
+        request.body.nome,
         request.body.sobrenome,
         request.body.nascimento,
-        request.body.perfil,
         request.body.celular,
         request.body.email,
         request.body.senha
     );
         console.log("aqui")
     //comando no banco para colocar as informações do formulário para o banco
-    const query = "INSERT INTO usuarios(name, sobrenone, nascimento, perfil, celular, email, senha) VALUES(?,?,?,?, ?,?,?)";
+    const query = "INSERT INTO usuarios(nome, sobrenome, nascimento, celular, email, senha) VALUES(?,?,?,?, ?,?)";
 
     //testando o banco
     connection.query(query, params, (err, results) => {
