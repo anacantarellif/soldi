@@ -36,16 +36,24 @@ button{
     color: var(--laranja);
     padding: 16px;
     border-style: solid;
+    width: 100%;
     
 }
 
 .botoes{
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     position: fixed;
     bottom: 0;
+    margin-right: 2rem;
     margin-bottom: 2rem;
+}
+
+.espaco-botoes{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 main{
@@ -54,28 +62,6 @@ main{
     gap: 6rem;
 }
 
-@keyframes loading {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  /* .progress {
-    background: #E7E7E7;
-    position: relative;
-    height: 8px;
-    width: 100%
-  }
-  
-  .progress::after {
-    animation: loading 6s infinite ease-in-out;
-    background: #897FBA;
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0
-  } */
-
-
-  
   .progress{
     margin-left: 2rem;
     margin-right: 2rem;
@@ -85,9 +71,6 @@ main{
     border-radius: 100px;
     background: #BDBCBC;
   }
-
-  
-  
 
   .progress1{
     margin-left: 2rem;

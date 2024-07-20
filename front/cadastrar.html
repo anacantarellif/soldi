@@ -3,31 +3,45 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link rel="stylesheet" href="/front/css/cadastro.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet"> -->
         <title>Document</title>
+        <link rel="stylesheet" href="cadastrar.css">
     </head>
 <body>
     <header>
+        <h1> Cadastro </h1>
     </header>
     <main>
         <div class="cadastro">
-            <h1> Cadastro </h1>
-            <h2> Informações pessoais </h2>
-            <input type="text" placeholder="Nome" class="nome">
-            <input type="text" placeholder="Sobrenome" class="sobrenome">
-            <input type="date" placeholder="Data de nascimento" class="nascimento">
+            <section class="sessao">
+                <div class="titulo">
+                    <h2>Informações pessoais</h2>
+                    <p>Primeiro de tudo, vamos nos conhecer. Nos diga, quem é você?</p>
+                </div>
+                <div class="campos">
+                    <input type="text" placeholder="Nome" class="nome" required>
+                    <input type="text" placeholder="Sobrenome" class="sobrenome">
+                    <input type="date" placeholder="Data de nascimento" class="nascimento" required>
+                </div>
+            </section>
 
-            <h2>Dados de acesso</h2>
-            <input type="email" placeholder="Email" class="email">
-            <input type="number" placeholder="Celular" class="celular">
-            <input type="password" placeholder="Senha" class="senha">
 
-            <button id="handleSubmit"> Criar conta </button>
-            <p>caso já tenha uma conta</p>
-            <!-- <button id="handleSubmit"> Faça Login </button> -->
+            <section class="sessao">
+                <div class="titulo">
+                    <h2>Dados de acesso</h2>
+                    <p>Primeiro de tudo, vamos nos conhecer. Nos diga, quem é você?</p>
+                </div>
+                <div class="campos">
+                    <input type="email" placeholder="Email" class="email" required>
+                    <input type="number" placeholder="Celular" class="celular" required>
+                    <input type="password" placeholder="Senha" class="senha" required>
+                </div>
+            </section>
+
+            <div class="submit">
+                <button id="handleSubmit"> Criar conta </button>
+                <!-- <button id="handleSubmit"> Faça Login </button> -->
+            </div>
+            
             
         </div>
     </main>

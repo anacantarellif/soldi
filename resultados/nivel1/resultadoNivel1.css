@@ -18,11 +18,30 @@ body{
     /* fonte */
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 16;
+    font-weight: 32;
     font-style: normal;
     font-variation-settings: "slnt" 0;
     font-size: 1rem;
-    margin: 3rem;
+    margin: 2rem;
+    
+}
+
+button{
+    background-color: var(--laranja);
+    background-repeat:no-repeat;
+    border-radius: 2rem;
+    border-color: var(--laranja);
+    cursor:pointer;
+    overflow: hidden; 
+    color: var(--branco);
+    padding: 16px;
+    border-style: solid;
+    width: 100%;
+
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 2rem;
+
     
 }
 
@@ -32,22 +51,4 @@ body{
 
 .titulo{
     padding: 2rem;
-}
-
-button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    background-color: var(--laranja);
-    background-repeat:no-repeat;
-    border-radius: 2rem;
-    border-color: var(--branco);
-    cursor: pointer;
-    color: var(--branco);
-    width: 80%;
-    height: 2.5rem;
-    position: fixed;
-    bottom: 0;
-    margin-bottom: 3rem;
 }

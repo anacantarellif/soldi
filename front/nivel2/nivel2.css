@@ -1,66 +1,68 @@
 *{
-    margin: 0; 
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root{
-    --laranja: #C93400;
-    --branco: #FAF4FA;
+  --laranja: #C93400;
+  --branco: #FAF4FA;
 }
 
 body{
-    background-color: var(--branco);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* fonte */
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 32;
-    font-style: normal;
-    font-variation-settings: "slnt" 0;
-    font-size: 1rem;
-    margin: 2rem;
-    
+  background-color: var(--branco);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* fonte */
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 32;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-size: 1rem;
+  margin: 2rem;
+  
 }
 
 button{
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border-radius: 2rem;
-    border-color: var(--laranja);
-    cursor:pointer;
-    overflow: hidden; 
-    color: var(--laranja);
-    padding: 16px;
-    border-style: solid;
-    
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border-radius: 2rem;
+  border-color: var(--laranja);
+  cursor:pointer;
+  overflow: hidden; 
+  color: var(--laranja);
+  padding: 16px;
+  border-style: solid;
+  width: 100%;
+  
 }
 
+
 .botoes{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    position: fixed;
-    bottom: 0;
-    margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: fixed;
+  bottom: 0;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.espaco-botoes{
+display: flex;
+flex-direction: column;
+gap: 1rem;
 }
 
 main{
-    display: flex;
-    flex-direction: column;
-    gap: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
 }
 
-@keyframes loading {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-
-  
   .progress{
     margin-left: 2rem;
     margin-right: 2rem;
