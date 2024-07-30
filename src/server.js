@@ -83,6 +83,7 @@ app.post('/nivel2/answer', (req, res) => {
     }
 });
 
+
 // Redirecionar para a home ao acessar a raiz
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'front', 'home.html'));
