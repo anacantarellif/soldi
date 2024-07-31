@@ -127,6 +127,79 @@ main{
     background: #C93400;
   }
   
+ 
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.quiz-container {
+    
+    padding: 20px;
 
-
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+.barra-progresso {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.barra-progresso div {
+    height: 10px;
+    background-color: #FF4500;
+    width: 0%;
+}
+.pergunta {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.respostas {
+    list-style: none;
+    padding: 0;
+}
+.respostas li {
+    margin-bottom: 10px;
+}
+.respostas button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #FF4500;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #FF4500;
+}
+.respostas button:hover {
+    background-color: #f1f1f1;
+}
+.resultado {
+    display: none;
+    margin-top: 20px;
+}
+.resultado.correto {
+    color: green;
+}
+.resultado.errado {
+    color: red;
+}
+#proxima-pergunta {
+    display: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
 

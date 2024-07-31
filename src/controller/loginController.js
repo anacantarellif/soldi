@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+
 const db = require('../config/db');
 
 exports.login = async (req, res) => {
