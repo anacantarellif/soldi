@@ -1,30 +1,48 @@
 
+const { response } = require('express');
 const db = require('../config/db');
 
-exports.login = async (req, res) => {
-    const { email, senha } = req.body;
+async function login(req, res) {
+    const params = Array(
+        req.body.email
+    )
+    console.log(req.body.email)
 
-    if (!email || !senha) {
-        return res.status(400).json({ message: 'Email e senha são obrigatórios.' });
-    }
+    const query = "SELECT email, senha FROM usuarios WHERE email = ?;";
 
-    try {
-        const [rows] = await db.query('SELECT * FROM usuarios WHERE email = ?', [email]);
-        const usuario = rows[0];
+    db.query(query, params, (err, results) => {
+        console.log(err, results)
+        if (results.length > 0) {
+            let senhaFormulario = req.body.senha;
+            let senhaBanco = results[0].senha;
 
-        if (!usuario) {
-            return res.status(401).json({ message: 'Email ou senha incorretos.' });
+            if (senhaBanco === senhaFormulario) {
+                response
+                    .status(200)
+                    .json({
+                        success: true,
+                        message: "Login com sucesso",
+                        data: results
+                    })
+            } else {
+                response
+                    .status(400)
+                    .json({
+                        success: false,
+                        message: "Verifique sua senha",
+                    })
+            }
+        } else {
+            response
+                .status(400)
+                .json({
+                    success: false,
+                    message: "Email não cadastrado"
+                })
         }
-
-        const senhaValida = await bcrypt.compare(senha, usuario.senha);
-
-        if (!senhaValida) {
-            return res.status(401).json({ message: 'Email ou senha incorretos.' });
-        }
-
-        return res.status(200).json({ message: 'Login bem-sucedido', usuario: { id: usuario.id, nome: usuario.nome, perfil: usuario.perfil } });
-    } catch (error) {
-        console.error(error);
-        return res.status(500).json({ message: 'Erro no servidor' });
-    }
+    })
 };
+
+module.exports = {
+    login
+}

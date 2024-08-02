@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const loginController = require('../controller/loginController');
+const { login } = require('../controller/loginController');
 
 // Define a rota de login
-router.post('/login', loginController.login);
+router.post('/login', login);
 
 module.exports = router;

@@ -5,6 +5,7 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 const usersRouter = require('./routes/usersRouter')
+const loginRouter = require('./routes/loginRouter');
 
 // Variáveis para armazenar as contagens de respostas
 let respostas = { A: 0, B: 0, C: 0 };
@@ -90,6 +91,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api', usersRouter)
+app.use('/api', loginRouter)
 
 app.listen(PORT, () => {
     console.log(`Quiz app listening at http://localhost:${PORT}`);

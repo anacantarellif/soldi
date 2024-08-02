@@ -77,6 +77,7 @@ let indicePerguntaAtual = 0;
 const containerPergunta = document.getElementById('container-pergunta');
 const containerResultado = document.getElementById('resultado');
 const botaoProximaPergunta = document.getElementById('proxima-pergunta');
+const botaoFinalizarQuiz = document.getElementById('finalizar-quiz');
 const barraProgresso = document.getElementById('progresso');
 
 function mostrarPergunta(pergunta) {
@@ -103,8 +104,15 @@ function selecionarResposta(indice) {
         containerResultado.classList.remove('correto');
     }
     containerResultado.style.display = 'block';
-    botaoProximaPergunta.style.display = 'block';
-    atualizarBarraProgresso();
+    if (indicePerguntaAtual < perguntas.length - 1) {
+        botaoProximaPergunta.style.display = 'block';
+    } else {
+        botaoProximaPergunta.style.display = 'none';
+        setTimeout(() => {
+            containerResultado.style.display = 'none';
+            botaoFinalizarQuiz.style.display = 'block';
+        }, 2000);
+    }
 }
 
 function atualizarBarraProgresso() {
@@ -118,9 +126,7 @@ botaoProximaPergunta.addEventListener('click', () => {
         mostrarPergunta(perguntas[indicePerguntaAtual]);
         containerResultado.style.display = 'none';
         botaoProximaPergunta.style.display = 'none';
-    } else {
-        containerPergunta.innerHTML = '<div class="pergunta">Quiz finalizado!</div>';
-        botaoProximaPergunta.style.display = 'none';
+        atualizarBarraProgresso();
     }
 });
 

@@ -38,7 +38,10 @@ button{
     border-style: solid;
     width: 100%;
 
-    position: fixed;
+
+    /* position: fixed; */
+    justify-content: center;
+    align-items: center;
     bottom: 0;
     margin-bottom: 2rem;
 
