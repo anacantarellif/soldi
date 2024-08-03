@@ -3,10 +3,11 @@ const { response } = require('express');
 const db = require('../config/db');
 
 async function login(req, res) {
+    console.log("ola")
     const params = Array(
         req.body.email
     )
-    console.log(req.body.email)
+    console.log("email", req.body.email)
 
     const query = "SELECT email, senha FROM usuarios WHERE email = ?;";
 
@@ -17,7 +18,8 @@ async function login(req, res) {
             let senhaBanco = results[0].senha;
 
             if (senhaBanco === senhaFormulario) {
-                response
+                console.log("senha certa'")
+                res
                     .status(200)
                     .json({
                         success: true,
@@ -25,7 +27,7 @@ async function login(req, res) {
                         data: results
                     })
             } else {
-                response
+                res
                     .status(400)
                     .json({
                         success: false,
@@ -33,7 +35,7 @@ async function login(req, res) {
                     })
             }
         } else {
-            response
+            res
                 .status(400)
                 .json({
                     success: false,

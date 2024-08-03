@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="cadastrar.css">
+        <link rel="stylesheet" href="../cadastrar.css">
         <title>Document</title>
     </head>
 <body>
@@ -12,15 +12,17 @@
     </header>
     <main>
         <div class="cadastro">
-            <section>
-                <div class="sessao">
+            <section class="sessao">
+
+                <div class="titulo">
                     <h2> Bem-vindo de volta! </h2>
                 </div>
-                
+                <div class="campo">
                     <input type="email" placeholder="Email" id="email">
                     <input type="password" placeholder="Senha" id="senha">
-                    <button type="button" onclick="login(event)" class="cadastro"> Login </button>
-                
+                </div>
+                <button type="button" onclick="login(event)" class="cadastro"> Login </button>
+            
             </section>
         </div>
     </main>

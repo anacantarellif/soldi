@@ -15,7 +15,7 @@ async function storeUser(request, response){
     );
         console.log("aqui")
     //comando no banco para colocar as informações do formulário para o banco
-    const query = "INSERT INTO usuarios(nome, sobrenome, nascimento, celular, email, senha) VALUES(?,?,?,?, ?,?)";
+    const query = "INSERT INTO usuarios(nome, sobrenome, nascimento, celular, email, senha) VALUES(?,?,?,?,?,?)";
 
     //testando o banco
     connection.query(query, params, (err, results) => {
