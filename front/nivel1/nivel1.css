@@ -1,171 +1,95 @@
-*{
-    margin: 0; 
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-:root{
-    --laranja: #C93400;
-    --branco: #FAF4FA;
+:root {
+  --laranja: #C93400;
+  --branco: #FAF4FA;
+  --cinza: #BDBCBC;
+  --verde: #007D1B;
+  --vermelho: #D70015;
 }
 
-body{
-    background-color: var(--branco);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* fonte */
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 32;
-    font-style: normal;
-    font-variation-settings: "slnt" 0;
-    font-size: 1rem;
-    margin: 2rem;
-    
-}
-
-button{
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border-radius: 2rem;
-    border-color: var(--laranja);
-    cursor:pointer;
-    overflow: hidden; 
-    color: var(--laranja);
-    padding: 16px;
-    border-style: solid;
-    width: 100%;
-    
-}
-
-.botoes{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    position: fixed;
-    bottom: 0;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
-}
-
-.espaco-botoes{
+body {
+  background-color: var(--branco);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  margin: 2rem;
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    gap: 6rem;
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  max-width: 40rem;
+  width: 90%;
 }
 
-  .progress{
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
-    width: 100%;
-    height: 29px;
-    border-radius: 100px;
-    background: #BDBCBC;
-  }
+.barra-progresso {
+  width: 100%;
+  background-color: var(--cinza);
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
 
-  .progress1{
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
-    width: 0%;
-    height: 29px;
-    border-radius: 100px;
-    background: #C93400;
-  }
-  .progress2{
+.barra-progresso div {
+  height: 1.8rem;
+  border-radius: 1rem;
+  background-color: var(--laranja);
+  width: 0%;
+}
 
-    width: 8.3%;
-    height: 29px;
-    border-radius: 100px;
-    background: #C93400;
-  }
-  .progress3{
+.pergunta {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
 
-    width: 16%;
-    height: 29px;
-    border-radius: 100px;
-    background: #C93400;
-  }
-  .progress4{
+.respostas {
+  list-style: none;
+  padding: 0;
+}
 
-    width: 32%;
-    height: 29px;
-    border-radius: 100px;
-    background: #C93400;
-  }
-  .progress5{
+.respostas li {
+  margin-bottom: 0.5rem;
+}
 
-    width: 40%;
-    height: 29px;
-    border-radius: 100px;
-    background: #C93400;
-  }
-  .progress6{
+.respostas button {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border-radius: 2rem;
+  border-color: var(--laranja);
+  cursor: pointer;
+  overflow: hidden;
+  color: var(--laranja);
+  padding: 1rem;
+  border-style: solid;
+  width: 100%;
+}
 
-    width: 48%;
-    height: 29px;
-    border-radius: 100px;
-    background: #C93400;
-  }
-  .progress7{
+.respostas button:hover {
+  background-color: var(--branco);
+}
 
-    width: 56%;
-    height: 29px;
-    border-radius: 100px;
-    background: #C93400;
-  }
-  .progress8{
-
-    width: 64%;
-    height: 29px;
-    border-radius: 100px;
-    background: #C93400;
-  }
-  .progress9{
-
-    width: 72%;
-    height: 29px;
-    border-radius: 100px;
-    background: #C93400;
-  }
-  .progress10{
-
-    width: 80%;
-    height: 29px;
-    border-radius: 100px;
-    background: #C93400;
-  }
-  .progress11{
-
-    width: 80%;
-    height: 29px;
-    border-radius: 100px;
-    background: #C93400;
-  }
-  .progress12{
-
-    width: 88%;
-    height: 29px;
-    border-radius: 100px;
-    background: #C93400;
-  }
-  .progress13{
-
-    width: 92%;
-    height: 29px;
-    border-radius: 100px;
-    background: #C93400;
-  }
-
-
+#finalizar-quiz {
+  background-color: var(--laranja);
+  background-repeat: no-repeat;
+  border-radius: 2rem;
+  border-color: var(--laranja);
+  cursor: pointer;
+  overflow: hidden;
+  color: var(--branco);
+  padding: 1rem;
+  border-style: solid;
+  width: 100%;
+  margin-top: 1rem;
+}
 
 

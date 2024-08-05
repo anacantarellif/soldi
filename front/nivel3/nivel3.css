@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --laranja: #C93400;
+    --branco: #FAF4FA;
+    --cinza: #BDBCBC;
+    --verde: #007D1B;
+    --vermelho: #D70015;
+  }
+  
+  body {
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    margin: 2rem;
+  }
+  
+  .quiz-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    max-width: 40rem;
+    width: 90%;
+  }
+  
+  .barra-progresso {
+    width: 100%;
+    background-color: var(--cinza);
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  
+  .barra-progresso div {
+    height: 1.8rem;
+    border-radius: 1rem;
+    background-color: var(--laranja);
+    width: 0%;
+  }
+  
+  .pergunta {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .respostas {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .respostas li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .respostas button {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border-radius: 2rem;
+    border-color: var(--laranja);
+    cursor: pointer;
+    overflow: hidden;
+    color: var(--laranja);
+    padding: 1rem;
+    border-style: solid;
+    width: 100%;
+  }
+  
+  .respostas button:hover {
+    background-color: var(--branco);
+  }
+  
+  #finalizar-quiz {
+    background-color: var(--laranja);
+    background-repeat: no-repeat;
+    border-radius: 2rem;
+    border-color: var(--laranja);
+    cursor: pointer;
+    overflow: hidden;
+    color: var(--branco);
+    padding: 1rem;
+    border-style: solid;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  
+  
