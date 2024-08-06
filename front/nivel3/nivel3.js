@@ -22,53 +22,43 @@ const perguntas = [
     },
     //pergunta 3
     {
-        pergunta: "Ao você encontrar satisfação e equilíbrio emocial nas suas metas financeira, o que acontece? ",
+        pergunta: "O que se deve fazer na etapa de 'Revisar' na Educação Financeira?",
         respostas: [
-            { texto: "Diminui sua autoestima e aumenta o estresse financeiro.", correta: false },
-            { texto: "Provoca insegurança e incertezas sobre o futuro financeiro.", correta: false },
-            { texto: "aumenta sua autoestima e garante uma boa saúde emocional", correta: true }
+            { texto: "Analisar comportamentos de consumo e corrigir hábitos ruins", correta: true },
+            { texto: "Gastar sem se preocupar com o orçamento", correta: false },
+            { texto: "Ignorar dívidas acumuladas.", correta: false }
         ],
-        explicacao: "Ao você encontrar satisfação e equilíbrio emocial nas suas metas financeira aumenta sua autoestima e garante uma boa saúde emocional.Embora o clichê seja que dinheiro não traz felicidade, o trabalho de se dedicar às finanças gera resultados positivos. Isso te deixa satisfeito consigo mesmo por ter atingido uma meta, aumenta sua autoestima e, consequentemente, garante uma boa saúde emocional. E ainda é um incentivo para continuar poupando e investindo no que realmente vale a pena.."
+        explicacao: "Revisar envolve analisar seus hábitos financeiros, identificar comportamentos de consumo impulsivos ou desnecessários e fazer ajustes para melhorar sua saúde financeira."
     },
     //pergunta 4
     {
-        pergunta: "Ter uma boa educação financeira afeta que que forma sua qualidade de vida?",
+        pergunta: "Qual é o objetivo final do pilar 'Realizar'?",
         respostas: [
-            { texto: "De forma positiva, me ajudando a ter uma vida melhor", correta: true },
-            { texto: "De forma negativa, faz eu ter mais ganância e estresse", correta: false },
-            { texto: "Se mantém igual, não melhora nem ajuda minha qualidade de vida ", correta: false }
+            { texto: "ontinuar com os mesmos hábitos financeiros.", correta: false },
+            { texto: "Agir em prol dos objetivos financeiros, cortando custos e investindo estrategicamente", correta: true },
+            { texto: "Adquirir mais dívidas para realizar sonhos", correta: false }
         ],
-        explicacao: "A educação financeira exige comprometimento e muita organização. Trata-se de um processo contínuo de aprendizado sobre como gerir bem as finanças, planejando e tomando decisões conscientes."
+        explicacao: "Realizar é a etapa onde você coloca em prática as ações necessárias para alcançar seus objetivos financeiros, como cortar custos e fazer investimentos estratégicos."
     },
     //pergunta 5
     {
-        pergunta: "O que é uma meta financeira de médio prazo?",
+        pergunta: "Por que é importante o registro contínuo das finanças?",
         respostas: [
-            { texto: "6 meses a 1 ano (Exemplo: fazer uma viagem internacional)", correta: false },
-            { texto: "2 a 5 anos (Exemplo: comprar um carro à vista)", correta: true },
-            { texto: "Mais de 10 anos (Exemplo: comprar uma casa própria) ", correta: false }
+            { texto: "Para esquecer onde se está gastando o dinheiro.", correta: false },
+            { texto: "Para manter um controle efetivo dos ganhos e despesas.vista)", correta: true },
+            { texto: "Para aumentar as dívidas mensais.", correta: false }
         ],
-        explicacao: "Uma meta financeira de médio prazo é de 2 a 5 anos (Exemplo: comprar um carro à vista). A partir da criação de metas, você aprende a controlar melhor as despesas. Afinal, com um objetivo fica mais fácil deixar o impulso de compras de lado. O planejamento financeiro é muito importante para isso. Estipule um valor máximo para cada despesa e evite extrapolar, isso vale desde uma lista de mercado."
+        explicacao: "Manter um registro contínuo das finanças ajuda a ter uma visão clara de onde o dinheiro está sendo gasto, facilitando a gestão e o planejamento financeiro."
     },
     //pergunta 6
     {
-        pergunta: "A reserva de emergência se refere a uma quantia para ser usada em situações de imprevisto, como: ",
+        pergunta: "O que deve ser feito ao identificar despesas desnecessárias durante a revisão?",
         respostas: [
-            { texto: "Comprar um novo smartphone", correta: false },
-            { texto: "Fazer uma viagem de férias", correta: false },
-            { texto: "Uma cirurgia de última hora", correta: true }
+            { texto: "Ignorar e continuar gastando.", correta: false },
+            { texto: "Continuar a fazer compras impulsivas.", correta: false },
+            { texto: "Adotar práticas de consumo consciente e cortar gastos desnecessários", correta: true }
         ],
-        explicacao: "A reserva de emergência se refere a uma quantia para ser usada em situações de imprevisto como uma cirurgia de última hora. É uma quantia de dinheiro que uma pessoa mantém disponível e acessível de forma imediata para ser utilizada em situações de imprevistos ou emergências financeiras. A principal função dessa reserva é proporcionar segurança financeira para enfrentar gastos inesperados sem recorrer a empréstimos, comprometer investimentos de longo prazo ou recorrer ao crédito de alto custo, como cartões de crédito."
-    },
-    //pergunta 7
-    {
-        pergunta: "Ter uma boa educação financeira afeta que que forma sua qualidade de vida?",
-        respostas: [
-            { texto: "De forma positiva, me ajudando a ter uma vida melhor", correta: true },
-            { texto: "De forma negativa, faz eu ter mais ganância e estresse", correta: false },
-            { texto: "Se mantém igual, não melhora nem ajuda minha qualidade de vida ", correta: false }
-        ],
-        explicacao: "Gastos invisíveis são aqueles que você consegue refletir antes de fazer como pedir delivery por preguiça de cozinhar. Outro exemplo é a corrida particular por aplicativo que 'vai ficar quase o mesmo preço do ônibus', esses gastos acabam consumindo seu orçamento mais do que você imagina. Um levantamento do GuiaBolso indica que aplicativos de carona costumam reter até 10% do orçamento mensal."
+        explicacao: "Ao identificar despesas desnecessárias, é importante adotar práticas de consumo consciente e eliminar gastos que não agregam valor, melhorando assim sua saúde financeira."
     },
 ];
 
