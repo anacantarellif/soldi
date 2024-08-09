@@ -180,3 +180,11 @@ function mostrarResultado() {
 mostrarPergunta(perguntas[indicePerguntaAtual]);
 // Inicializar barra de progresso
 atualizarBarraProgresso();
+
+async function nextLevel(event) {
+    event.preventDefault();
+
+    //csontruir rota para atualizar nivel do usuario no banco
+    //update usuarios set nivel = 2 where id = 2;
+
+}

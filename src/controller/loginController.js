@@ -16,8 +16,8 @@ async function login(req, res) {
         if (results.length > 0) {
             let senhaFormulario = req.body.senha;
             let senhaBanco = results[0].senha;
-
-            if (senhaBanco === senhaFormulario) {
+            console.log(senhaFormulario, senhaBanco)
+            if (Number(senhaBanco) === Number(senhaFormulario)) {
                 console.log("senha certa'")
                 res
                     .status(200)

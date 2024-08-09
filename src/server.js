@@ -19,7 +19,7 @@ app.use(cors());
 // Redirecionar para a home ao acessar a raiz
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'front', 'walktrough', 'walktrough.html'));
+    res.sendFile(path.join(__dirname, '..', 'front', 'login', 'login.html'));
 });
 
 app.use('/api', usersRouter)
