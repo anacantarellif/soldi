@@ -184,11 +184,32 @@ atualizarBarraProgresso();
 async function nextLevel(event) {
     event.preventDefault();
 
-    //csontruir rota para atualizar nivel do usuario no banco
-    //update usuarios set nivel = 2 where id = 2;
-
+    
     //pegar os dados do localstorage
+    Id_user = localStorage.getItem('usuarioId');
+
+    //csontruir rota para atualizar nivel do usuario no banco
+    const response = await fetch('http://localhost:3001/api/user/updateID', {
+        method: "POST",
+        headers: {
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify(Id_user)
+    });
+
     //converter de volta para json
+
+    if (response.ok) {
+        popup.style.display = 'none';
+        tabela.innerHTML = '';
+        await getItens();  
+       
+        adicionarItem.style.display = 'block';
+        salvar.style.display = 'block';
+        atualizar.style.display = 'none';
+       
+        Excluir(true);
+    }
 
 }
 

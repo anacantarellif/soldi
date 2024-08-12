@@ -40,9 +40,48 @@ async function storeUser(request, response){
     })
 }
 
+async function storeID(request, response){
+    console.log("aqui")
+
+    //recuperar dados do forms
+    const params = Array(
+
+        request.body.nivel,
+        request.body.id
+        
+    );
+        console.log("aqui")
+    //comando no banco para colocar as informações do formulário para o banco
+    const query = "UPDATE usuarios set nivel = ? where id = ?";
+
+
+
+    //testando o banco
+    connection.query(query, params, (err, results) => {
+        console.log(err, results)
+        if (results) {
+            response
+                .status(200)
+                .json({
+                    success: true,
+                    message: 'Sucesso!',
+                    data: results
+                })
+        }else{
+            response
+                .status(400)
+                .json({
+                    success: false,
+                    message: 'Sem sucesso!',
+                    data: err
+                })
+        }
+    })
+}
 
 
 
 module.exports={
-    storeUser
+    storeUser,
+    storeID
 }

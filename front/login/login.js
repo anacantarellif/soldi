@@ -17,7 +17,18 @@ async function login(event) {
 
     if(results.success) {
         alert(results.message);
-        localStorage.setItem("usuarioId", JSON.stringify(results.data))
+        //setando e pegando id do usuario
+        localStorage.setItem('usuarioId', JSON.stringify(results.data.id))
+            Id_user = localStorage.getItem('usuarioId');
+            console.log(`Ìd do usuário é ${Id_user}`);
+
+        //setando e pegando nivel do usuario
+        localStorage.setItem('usuarioNivel', JSON.stringify(results.data.nivel))
+            Nivel_user = localStorage.getItem('usuarioNivel');
+            console.log(`Nivel do usuário é ${Nivel_user}`);
+
+    
+        //window.location.href = "/front/home.html"
     } else {
         alert(results.message);
     }
