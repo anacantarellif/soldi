@@ -17,7 +17,9 @@ async function login(event) {
 
     if(results.success) {
         alert(results.message);
+        localStorage.setItem("usuarioId", JSON.stringify(results.data))
     } else {
         alert(results.message);
     }
 }
+

@@ -187,4 +187,8 @@ async function nextLevel(event) {
     //csontruir rota para atualizar nivel do usuario no banco
     //update usuarios set nivel = 2 where id = 2;
 
+    //pegar os dados do localstorage
+    //converter de volta para json
+
 }
+
