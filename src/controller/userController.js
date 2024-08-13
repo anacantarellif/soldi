@@ -45,16 +45,12 @@ async function storeID(request, response){
 
     //recuperar dados do forms
     const params = Array(
-
-        request.body.nivel,
-        request.body.id
-        
+        nivel = Number(request.body.Nivel_user) + 1,
+        Number(request.body.Id_user)        
     );
-        console.log("aqui")
+    console.log(params);
     //comando no banco para colocar as informações do formulário para o banco
     const query = "UPDATE usuarios set nivel = ? where id = ?";
-
-
 
     //testando o banco
     connection.query(query, params, (err, results) => {

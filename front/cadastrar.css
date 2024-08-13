@@ -28,13 +28,13 @@ body{
 }
 
 button{
-    background-color: Transparent;
+    background-color: var(--laranja);
     background-repeat:no-repeat;
     border-radius: 2rem;
     border-color: var(--laranja);
     cursor:pointer;
     overflow: hidden; 
-    color: var(--laranja);
+    color: var(--branco);
     padding: 16px;
     border-style: solid;
     width: 100%;

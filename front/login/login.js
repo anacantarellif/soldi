@@ -28,7 +28,15 @@ async function login(event) {
             console.log(`Nivel do usuário é ${Nivel_user}`);
 
     
-        //window.location.href = "/front/home.html"
+        if (Nivel_user == 1) {
+            window.location.href = "../home.html"
+        } else if (Nivel_user == 2 ) {
+            window.location.href = "../home2.html"
+        } else {
+            window.location.href = "../home3.html"
+        }
+
+
     } else {
         alert(results.message);
     }

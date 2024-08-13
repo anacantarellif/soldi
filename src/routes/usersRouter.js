@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const{storeUser, storeID} = require('../controller/userController')
 
-console.log("AQUI")
-
 router.post('/user/create', storeUser);
 router.post('/user/updateID', storeID);
 
