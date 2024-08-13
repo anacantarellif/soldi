@@ -187,8 +187,9 @@ async function nextLevel(event) {
     //pegar os dados do localstorage
     let Id_user = localStorage.getItem('usuarioId');
     let Nivel_user = localStorage.getItem('usuarioNivel');
+    let Pontos_user = localStorage.getItem('usuarioPontos');
 
-    let data = {Id_user, Nivel_user}
+    let data = {Id_user, Nivel_user, Pontos_user}
     console.log(data)
 
     //csontruir rota para atualizar nivel do usuario no banco
@@ -201,18 +202,6 @@ async function nextLevel(event) {
     });
 
     //converter de volta para json
-
-    if (response.ok) {
-        popup.style.display = 'none';
-        tabela.innerHTML = '';
-        // await getItens();  
-       
-        adicionarItem.style.display = 'block';
-        salvar.style.display = 'block';
-        atualizar.style.display = 'none';
-       
-        // Excluir(true);
-    }
 
 }
 

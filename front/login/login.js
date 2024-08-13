@@ -27,6 +27,10 @@ async function login(event) {
             Nivel_user = localStorage.getItem('usuarioNivel');
             console.log(`Nivel do usuário é ${Nivel_user}`);
 
+        localStorage.setItem('usuarioPontos', JSON.stringify(results.data.pontos))
+            Pontos_user = localStorage.getItem('usuarioPontos');
+            console.log(`Ponto do usuário são ${Nivel_user}`);
+
     
         if (Nivel_user == 1) {
             window.location.href = "../home.html"

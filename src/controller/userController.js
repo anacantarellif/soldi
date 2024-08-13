@@ -46,11 +46,15 @@ async function storeID(request, response){
     //recuperar dados do forms
     const params = Array(
         nivel = Number(request.body.Nivel_user) + 1,
-        Number(request.body.Id_user)        
+        pontos = Number(request.body.Pontos_user) + 10,
+        Number(request.body.Id_user)  
+      
     );
     console.log(params);
     //comando no banco para colocar as informações do formulário para o banco
-    const query = "UPDATE usuarios set nivel = ? where id = ?";
+    const query = "UPDATE usuarios set nivel = ?, pontos = ? where id = ?";
+
+    // como atualizao duas coisas nivel e pontos???????????????????????????????????????
 
     //testando o banco
     connection.query(query, params, (err, results) => {
