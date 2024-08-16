@@ -77,6 +77,32 @@
   .respostas button:hover {
     background-color: var(--branco);
   }
+
+  .correto{
+    color: var(--verde);
+  }
+
+  .errado{
+    color: var(--vermelho);
+  }
+
+  #proxima-pergunta {
+    background-color: var(--laranja);
+    background-repeat: no-repeat;
+    border-radius: 2rem;
+    border-color: var(--laranja);
+    cursor: pointer;
+    overflow: hidden;
+    color: var(--branco);
+    padding: 1rem;
+    border-style: solid;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  a{
+    text-decoration: none;
+  }
   
   #finalizar-quiz {
     background-color: var(--laranja);

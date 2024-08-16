@@ -188,8 +188,9 @@ async function nextLevel(event) {
     let Id_user = localStorage.getItem('usuarioId');
     let Nivel_user = localStorage.getItem('usuarioNivel');
     let Pontos_user = localStorage.getItem('usuarioPontos');
+    let nivel_etapa = 1;
 
-    let data = {Id_user, Nivel_user, Pontos_user}
+    let data = {Id_user, Nivel_user, Pontos_user, nivel_etapa}
     console.log(data)
 
     //csontruir rota para atualizar nivel do usuario no banco
@@ -202,6 +203,8 @@ async function nextLevel(event) {
     });
 
     //converter de volta para json
+
+    window.location.href = "../home2.html"
 
 }
 

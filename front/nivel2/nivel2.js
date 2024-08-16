@@ -32,7 +32,7 @@ const perguntas = [
     },
     //pergunta 4
     {
-        pergunta: "Ter uma boa educação financeira afeta que que forma sua qualidade de vida?",
+        pergunta: "Ter uma boa educação financeira afeta de que forma sua qualidade de vida?",
         respostas: [
             { texto: "De forma positiva, me ajudando a ter uma vida melhor", correta: true },
             { texto: "De forma negativa, faz eu ter mais ganância e estresse", correta: false },
@@ -111,7 +111,7 @@ function selecionarResposta(indice) {
         setTimeout(() => {
             containerResultado.style.display = 'none';
             botaoFinalizarQuiz.style.display = 'block';
-        }, 2000);
+        }, 1000);
     }
 }
 
@@ -134,3 +134,29 @@ botaoProximaPergunta.addEventListener('click', () => {
 mostrarPergunta(perguntas[indicePerguntaAtual]);
 // Inicializar barra de progresso
 atualizarBarraProgresso();
+
+async function nextLevel(event) {
+    event.preventDefault();
+    
+    //pegar os dados do localstorage
+    let Id_user = localStorage.getItem('usuarioId');
+    let Nivel_user = localStorage.getItem('usuarioNivel');
+    let Pontos_user = localStorage.getItem('usuarioPontos');
+
+    let data = {Id_user, Nivel_user, Pontos_user}
+    console.log(data)
+
+    //csontruir rota para atualizar nivel do usuario no banco
+    const response = await fetch('http://localhost:3000/api/user/updateID', {
+        method: "POST",
+        headers: {
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify(data)
+    });
+
+    //converter de volta para json
+
+    window.location.href = "../home3.html"
+
+}

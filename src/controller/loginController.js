@@ -9,7 +9,7 @@ async function login(req, res) {
     )
     console.log("email", req.body.email)
 
-    const query = "SELECT email, senha, id, nivel FROM usuarios WHERE email = ?;";
+    const query = "SELECT email, senha, id, nivel, pontos FROM usuarios WHERE email = ?;";
 
     db.query(query, params, (err, results) => {
         console.log(err, results)

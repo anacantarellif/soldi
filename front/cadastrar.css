@@ -37,7 +37,20 @@ button{
     color: var(--branco);
     padding: 16px;
     border-style: solid;
-    width: 100%;
+
+    /* width: 15rem;
+    position: fixed;
+    bottom: 0; */
+
+    /* min-width: 10rem;
+    width: auto;
+    max-width: 20rem; */
+    margin-bottom: 2rem;
+    position: sticky;
+    bottom: 0;
+
+
+    
     
 }
 
@@ -45,8 +58,6 @@ button{
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    position: fixed;
-    bottom: 0;
     margin-bottom: 2rem;
 }
 

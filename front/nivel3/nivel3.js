@@ -124,3 +124,29 @@ botaoProximaPergunta.addEventListener('click', () => {
 mostrarPergunta(perguntas[indicePerguntaAtual]);
 // Inicializar barra de progresso
 atualizarBarraProgresso();
+
+async function nextLevel(event) {
+    event.preventDefault();
+    
+    //pegar os dados do localstorage
+    let Id_user = localStorage.getItem('usuarioId');
+    let Nivel_user = localStorage.getItem('usuarioNivel');
+    let Pontos_user = localStorage.getItem('usuarioPontos');
+
+    let data = {Id_user, Nivel_user, Pontos_user}
+    console.log(data)
+
+    //csontruir rota para atualizar nivel do usuario no banco
+    const response = await fetch('http://localhost:3000/api/user/updateID', {
+        method: "POST",
+        headers: {
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify(data)
+    });
+
+    //converter de volta para json
+
+    window.location.href = "../home3.html"
+
+}
