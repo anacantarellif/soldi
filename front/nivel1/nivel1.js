@@ -169,7 +169,11 @@ function mostrarResultado() {
 
     containerPergunta.innerHTML = `
         <div class="resultado-final">
-            <strong>Seu perfil financeiro é: ${resultadoFinal}</strong>
+            <img src="../img/relatorio.png">
+            <div>
+                <strong>Seu perfil financeiro é... </strong>
+                <h1>${resultadoFinal}</h1>
+            </div>
             <p>${explicacao}</p>
         </div>
     `;
@@ -204,7 +208,7 @@ async function nextLevel(event) {
 
     //converter de volta para json
 
-    window.location.href = "../home2.html"
+    window.location.href = "../conquista/conquista.html"
 
 }
 

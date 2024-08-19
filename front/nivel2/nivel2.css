@@ -30,6 +30,7 @@
     padding: 1rem;
     max-width: 40rem;
     width: 90%;
+    gap: 2rem;
   }
   
   .barra-progresso {
@@ -96,8 +97,11 @@
     color: var(--branco);
     padding: 1rem;
     border-style: solid;
-    width: 100%;
+    width: 80%;
     margin-top: 1rem;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 2rem;
   }
 
   a{

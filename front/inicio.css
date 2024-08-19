@@ -45,7 +45,8 @@ button{
     background-color: var(--laranja);
     background-repeat:no-repeat;
     border-radius: 2rem;
-    border-color: var(--branco);
+    border: solid 1px;
+    border-color: var(--laranja);
     cursor: pointer;
     color: var(--branco);
     width: 80%;

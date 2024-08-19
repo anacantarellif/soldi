@@ -43,12 +43,16 @@ button{
     background-color: Transparent;
     background-repeat:no-repeat;
     border-radius: 2rem;
+    border: solid 2px;
     border-color: var(--branco);
     cursor:pointer;
     overflow: hidden; 
     color: var(--branco);
     width: 80%;
     height: 40px;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 2rem;
 
 }
 
