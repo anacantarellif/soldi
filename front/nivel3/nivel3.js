@@ -132,19 +132,19 @@ async function nextLevel(event) {
     let Id_user = localStorage.getItem('usuarioId');
     let Nivel_user = localStorage.getItem('usuarioNivel');
     let Pontos_user = localStorage.getItem('usuarioPontos');
+    let Nivel_atual = 2;
 
-    let data = {Id_user, Nivel_user, Pontos_user}
+    let data = {Id_user, Nivel_user, Pontos_user, Nivel_atual}
     console.log(data)
 
     //csontruir rota para atualizar nivel do usuario no banco
-    const response = await fetch('http://localhost:3000/api/user/updateID', {
-        method: "POST",
+    const response = await fetch(`http://localhost:3000/api/user/${Id_user}`, {
+        method: "PUT",
         headers: {
             "Content-Type":"application/json"
         },
         body: JSON.stringify(data)
     });
-
     //converter de volta para json
 
     window.location.href = "../home3.html"

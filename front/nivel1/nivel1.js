@@ -188,18 +188,20 @@ atualizarBarraProgresso();
 async function nextLevel(event) {
     event.preventDefault();
     
+
+    
     //pegar os dados do localstorage
     let Id_user = localStorage.getItem('usuarioId');
     let Nivel_user = localStorage.getItem('usuarioNivel');
     let Pontos_user = localStorage.getItem('usuarioPontos');
-    let nivel_etapa = 1;
+    let Nivel_atual = 1;
 
-    let data = {Id_user, Nivel_user, Pontos_user, nivel_etapa}
+    let data = {Id_user, Nivel_user, Pontos_user, Nivel_atual}
     console.log(data)
 
     //csontruir rota para atualizar nivel do usuario no banco
-    const response = await fetch('http://localhost:3000/api/user/updateID', {
-        method: "POST",
+    const response = await fetch(`http://localhost:3000/api/user/${Id_user}`, {
+        method: "PUT",
         headers: {
             "Content-Type":"application/json"
         },
