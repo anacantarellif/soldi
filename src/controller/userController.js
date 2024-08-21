@@ -87,7 +87,38 @@ async function storeID(request, response){
     })
 }
 
+async function getDados(req, res) {
+    
+    const params = Array(
+        req.body.id
+    )
+
+
+    const query = "SELECT nivel, pontos FROM usuarios WHERE id = ?;";
+
+    connection.query(query, params, (err, results) => {
+        console.log(err, results)
+        if (results.length > 0) {
+                res
+                    .status(200)
+                    .json({
+                        success: true,
+                        message: "Pegou nivel e pontos",
+                        data: results[0]
+                    })
+            } else {
+                res
+                    .status(400)
+                    .json({
+                        success: false,
+                        message: "Deu errado",
+                    })
+            }
+        }) 
+    }
+
 module.exports={
     storeUser,
-    storeID
+    storeID,
+    getDados
 }

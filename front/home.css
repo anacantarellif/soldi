@@ -45,6 +45,15 @@ main{
     
 }
 
+#main-conteudos{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
 .tag{
     background-color: var(--azul);
     border-radius: 2rem;
@@ -62,6 +71,15 @@ main{
     position: fixed;
     left: 1rem;
     gap: 0.5rem;
+}
+
+#trabalhando{
+    width: 80%;
+    height: 80%;
+}
+
+.preto{
+    color: var(--preto);
 }
 
 #nivel1{

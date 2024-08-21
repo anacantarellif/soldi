@@ -44,5 +44,7 @@ async function login(event) {
     } else {
         alert(results.message);
     }
+
+    window.location.href = "../home.html"
 }
 

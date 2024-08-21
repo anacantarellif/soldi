@@ -26,7 +26,8 @@ button.onclick = async function(e) {
         console.log(content)
 
         if (content.success) {
-            alert("Sucesso"); 
+            alert("Sucesso");
+            window.location.href = "../front/login/login.html" 
         } else {
             alert("Não"); 
         }
@@ -35,4 +36,6 @@ button.onclick = async function(e) {
         console.error("Erro ao enviar a requisição:", error); 
         alert("Erro ao enviar a requisição. Verifique o console para mais detalhes."); 
     }
+
+
 }; 
