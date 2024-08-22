@@ -20,7 +20,7 @@ async function login(event) {
         //setando e pegando id do usuario
         localStorage.setItem('usuarioId', JSON.stringify(results.data.id))
             Id_user = localStorage.getItem('usuarioId');
-            console.log(`Ìd do usuário é ${Id_user}`);
+            console.log(`Id do usuário é ${Id_user}`);
 
         //setando e pegando nivel do usuario
         localStorage.setItem('usuarioNivel', JSON.stringify(results.data.nivel))
@@ -44,7 +44,5 @@ async function login(event) {
     } else {
         alert(results.message);
     }
-
-    window.location.href = "../home.html"
 }
 

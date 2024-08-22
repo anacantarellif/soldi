@@ -27,3 +27,18 @@
 // }
  
 // getPontos();
+
+
+  
+document.addEventListener("DOMContentLoaded", (event) => {
+    async function getDados () {
+    
+        const pontos = localStorage.getItem("usuarioPontos")
+        console.log(pontos)
+
+        div = document.getElementById('pontos')
+        div.textContent = ''
+        div.textContent = content.pontos
+    }
+    getDados()
+  });
