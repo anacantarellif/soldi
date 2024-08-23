@@ -169,7 +169,13 @@ async function nextLevel(event) {
     if (Nivel_atual>=Nivel_user){
         window.location.href = "../conquista/conquista.html"
     }else{
-        window.location.href = "../home3.html"
+        if (Nivel_user == 1) {
+            window.location.href = "../home.html"
+        } else if (Nivel_user == 2 ) {
+            window.location.href = "../home2.html"
+        } else {
+            window.location.href = "../home3.html"
+        }
     }
 
 }

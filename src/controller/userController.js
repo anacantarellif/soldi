@@ -42,8 +42,6 @@ async function storeUser(request, response){
 
 async function storeID(request, response){
 
-
-    //let query1 = " SELECT * FROM usuarios WHERE id = ? "
     let params = []
     console.log(params)
     if (request.body.Nivel_atual>=request.body.Nivel_user){
