@@ -36,9 +36,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const pontos = localStorage.getItem("usuarioPontos")
         console.log(pontos)
 
-        div = document.getElementById('pontos')
-        div.textContent = ''
-        div.textContent = content.pontos
+        let spanPontos = document.getElementById('pontos')
+        spanPontos.innerHTML = pontos; 
     }
     getDados()
   });

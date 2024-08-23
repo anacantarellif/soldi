@@ -212,6 +212,7 @@ async function nextLevel(event) {
 
     let data = {Id_user, Nivel_user, Pontos_user, Nivel_atual}
     console.log(data)
+    localStorage.setItem('usuarioPontos', data.Pontos_user)
 
     //csontruir rota para atualizar nivel do usuario no banco
     const response = await fetch(`http://localhost:3000/api/user/${Id_user}`, {
@@ -223,8 +224,8 @@ async function nextLevel(event) {
     });
 
     //converter de volta para json
-
-
+''
+    console.log(Pontos_user);
     if (Nivel_atual>=Nivel_user){
         window.location.href = "../conquista/conquista.html"
     }else{
