@@ -37,6 +37,11 @@ header{
     padding: 2rem;
 }
 
+a{
+    text-decoration: none;
+    color: var(--branco);
+}
+
 main{
     display: flex;
     flex-direction: column;
