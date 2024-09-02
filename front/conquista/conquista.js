@@ -39,6 +39,6 @@ async function fechar(event){
     } else if (Nivel_user == 2 ) {
         window.location.href = "../home2.html"
     } else {
-           window.location.href = "../home3.html"
+        window.location.href = "../home3.html"
     }
 }

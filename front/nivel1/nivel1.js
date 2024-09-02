@@ -222,7 +222,7 @@ async function nextLevel(event) {
     });
 
     //converter de volta para json
-''
+
     console.log(Pontos_user);
     if (Nivel_atual>=Nivel_user){
         window.location.href = "../conquista/conquista.html"

@@ -118,8 +118,15 @@
     color: var(--branco);
     padding: 1rem;
     border-style: solid;
-    width: 100%;
+    width: 80%;
     margin-top: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
   
   
