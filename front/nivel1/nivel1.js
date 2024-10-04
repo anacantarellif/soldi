@@ -198,7 +198,6 @@ async function nextLevel(event) {
         body: JSON.stringify(dataDados)
     });
 
-
     const resultsDados = await responseDados.json();
     console.log(resultsDados)
     
@@ -226,6 +225,7 @@ async function nextLevel(event) {
     console.log(Pontos_user);
     if (Nivel_atual>=Nivel_user){
         window.location.href = "../conquista/conquista.html"
+
     }else{
         if (Nivel_user == 1) {
             window.location.href = "../home.html"

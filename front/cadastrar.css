@@ -27,6 +27,10 @@ body{
     
 }
 
+a{
+    color: var(--laranja);
+}
+
 button{
     background-color: var(--laranja);
     background-repeat:no-repeat;
@@ -49,6 +53,10 @@ button{
     position: sticky;
     bottom: 0;
 
+}
+
+#handleSubmit{
+    width: 100%;
 }
 
 .botoes{
