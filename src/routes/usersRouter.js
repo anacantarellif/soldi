@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const{storeUser, storeID, getDados} = require('../controller/userController')
+const{storeUser, storeID, getDados, getRanking} = require('../controller/userController')
 
 // router.get('/pontos/:id', getPontos)
 
@@ -56,3 +56,5 @@ router.put('/user/:id', storeID);
 *                  type: object
 */
 router.get('/user/dados/', getDados);
+
+router.get('/user/ranking/', getRanking);
