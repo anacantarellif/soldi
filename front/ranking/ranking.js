@@ -1,7 +1,7 @@
 // Função para buscar dados da API para a pontuação e informações do usuário
 async function fetchUserData() {
     try {
-        const response = await fetch('http://localhost:3000/users'); // URL do endpoint que retorna a lista de usuários
+        const response = await fetch('http://localhost:3000/user/ranking/'); // URL do endpoint que retorna a lista de usuários
         const data = await response.json();
         return data;
     } catch (error) {
