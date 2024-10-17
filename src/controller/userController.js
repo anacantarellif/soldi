@@ -115,40 +115,29 @@ async function getDados(req, res) {
 }
 
 async function getRanking(req, res) {
+    const query = 'SELECT nome, pontos FROM usuarios ORDER BY pontos DESC';
 
-    const params = Array(
-        req.body.id
-    )
+    connection.query(query, (err, results) => {
+        if (err) {
+            console.error('Erro ao buscar ranking:', err);
+            return res.status(500).json({
+                success: false,
+                message: 'Erro ao recuperar o ranking.',
+                data: err
+            });
+        }
 
-    const query = 'SELECT name, points FROM users ORDER BY points DESC'; // Consulta SQL
-
-    connection.query(query, params, (err, results) => {
-        console.log(err, results)
-        if (results.length > 0) {
-                res
-                    .status(200)
-                    .json({
-                        success: true,
-                        message: "Pegou nivel e pontos",
-                        data: results[0]
-                    })
-            } else {
-                res
-                    .status(400)
-                    .json({
-                        success: false,
-                        message: "Deu errado",
-                    })
-            }
-        }) 
-
+        res.status(200).json({
+            success: true,
+            message: 'Ranking recuperado com sucesso.',
+            data: results
+        });
+    });
 }
 
-
-
-module.exports={
-    storeUser,
+module.exports = {
     storeID,
+    storeUser,
     getDados,
-    getRanking
-}
+    getRanking 
+};

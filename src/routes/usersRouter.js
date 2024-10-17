@@ -57,4 +57,22 @@ router.put('/user/:id', storeID);
 */
 router.get('/user/dados/', getDados);
 
+/** 
+@swagger
+*     /user/ranking:
+*     get:
+*         summary: Pega o nível do usuário no ranking
+*     responses:
+*     200:
+*         description: Sucesso
+*         content:
+*             application/json:
+*                schema:
+*                 type: array
+*                 items:
+*                  type: object
+*/
 router.get('/user/ranking/', getRanking);
+
+
+module.exports = router;
