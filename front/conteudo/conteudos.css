@@ -96,9 +96,7 @@ a{
 main{
     display: flex;
     flex-direction: column;
-    gap: 0rem;
-    justify-content: center;
-    
+    justify-content: center;  
 }
 
 #main-conteudos{
