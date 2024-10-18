@@ -7,42 +7,48 @@ async function login(event) {
     const data = { email, senha };
     console.log(data);
 
-    const response = await fetch('http://localhost:3000/api/login',{
-        method: "POST",
-        headers: { "Content-Type": "application/json;charset=UTF-8" }, 
-        body: JSON.stringify(data)
-    });
+    try {
+        const response = await fetch('http://localhost:3000/api/login', {
+            method: "POST",
+            headers: { "Content-Type": "application/json;charset=UTF-8" }, 
+            body: JSON.stringify(data)
+        });
 
-    const results = await response.json();
+        const results = await response.json();
 
-    if(results.success) {
-        alert(results.message);
-        //setando e pegando id do usuario
-        localStorage.setItem('usuarioId', JSON.stringify(results.data.id))
-            Id_user = localStorage.getItem('usuarioId');
-            console.log(`Id do usuário é ${Id_user}`);
+        if (results.success) {
+            alert(results.message);
 
-        //setando e pegando nivel do usuario
-        localStorage.setItem('usuarioNivel', JSON.stringify(results.data.nivel))
-            Nivel_user = localStorage.getItem('usuarioNivel');
-            console.log(`Nivel do usuário é ${Nivel_user}`);
+            // Armazenar dados no localStorage
+            localStorage.setItem('usuarioId', results.data.id);
+            localStorage.setItem('usuarioNivel', results.data.nivel);
+            localStorage.setItem('usuarioPontos', results.data.pontos);
 
-        localStorage.setItem('usuarioPontos', JSON.stringify(results.data.pontos))
-            Pontos_user = localStorage.getItem('usuarioPontos');
-            console.log(`Ponto do usuário são ${Nivel_user}`);
+            // Recuperar dados do localStorage
+            const Id_user = localStorage.getItem('usuarioId');
+            const Nivel_user = parseInt(localStorage.getItem('usuarioNivel'));
+            const Pontos_user = parseInt(localStorage.getItem('usuarioPontos'));
 
-    
-        if (Nivel_user == 1) {
-            window.location.href = "../home.html"
-        } else if (Nivel_user == 2 ) {
-            window.location.href = "../home2.html"
+            console.log(`Id do usuário: ${Id_user}`);
+            console.log(`Nível do usuário: ${Nivel_user}`);
+            console.log(`Pontos do usuário: ${Pontos_user}`);
+
+            // Redirecionar para a página correta com base no nível do usuário
+            if (Nivel_user === 1) {
+                window.location.href = "../home.html";
+            } else if (Nivel_user === 2) {
+                window.location.href = "../home2.html";
+            } else {
+                window.location.href = "../home3.html";
+            }
+
         } else {
-            window.location.href = "../home3.html"
+            alert(results.message);
         }
-
-
-    } else {
-        alert(results.message);
+    } catch (error) {
+        console.error('Erro ao realizar login:', error);
+        alert('Erro ao conectar com o servidor. Tente novamente mais tarde.');
     }
 }
+
 

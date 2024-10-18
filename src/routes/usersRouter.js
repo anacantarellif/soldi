@@ -55,7 +55,7 @@ router.put('/user/:id', storeID);
 *                 items:
 *                  type: object
 */
-router.get('/user/dados/', getDados);
+router.post('/user/dados/', getDados);
 
 /** 
 @swagger

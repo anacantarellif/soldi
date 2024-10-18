@@ -115,7 +115,7 @@ async function getDados(req, res) {
 }
 
 async function getRanking(req, res) {
-    const query = 'SELECT nome, pontos FROM usuarios ORDER BY pontos DESC';
+    const query = 'SELECT id, nome, pontos FROM usuarios ORDER BY pontos DESC';
 
     connection.query(query, (err, results) => {
         if (err) {
