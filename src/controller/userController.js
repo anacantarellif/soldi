@@ -114,6 +114,35 @@ async function getDados(req, res) {
         }) 
 }
 
+async function getDadosUser(req, res) {
+    
+    const params = Array(
+        req.params.id
+    )
+
+    const query = "SELECT nome, sobrenome, nascimento, email, celular, senha FROM usuarios WHERE id = ?;";
+
+    connection.query(query, params, (err, results) => {
+        console.log(err, results)
+        if (results.length > 0) {
+                res
+                    .status(200)
+                    .json({
+                        success: true,
+                        message: "Pegou dados do user",
+                        data: results[0]
+                    })
+            } else {
+                res
+                    .status(400)
+                    .json({
+                        success: false,
+                        message: "Deu errado",
+                    })
+            }
+        }) 
+}
+
 async function getRanking(req, res) {
     const query = 'SELECT id, nome, pontos FROM usuarios ORDER BY pontos DESC';
 
@@ -139,5 +168,6 @@ module.exports = {
     storeID,
     storeUser,
     getDados,
+    getDadosUser,
     getRanking 
 };

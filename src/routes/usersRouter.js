@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const{storeUser, storeID, getDados, getRanking} = require('../controller/userController')
+const{storeUser, storeID, getDados, getDadosUser, getRanking} = require('../controller/userController')
 
 // router.get('/pontos/:id', getPontos)
 
@@ -56,6 +56,23 @@ router.put('/user/:id', storeID);
 *                  type: object
 */
 router.post('/user/dados/', getDados);
+
+/** 
+@swagger
+*     /user/dadosUser:
+*     get:
+*         summary: Pega as informações do usuário
+*     responses:
+*     200:
+*         description: Sucesso
+*         content:
+*             application/json:
+*                schema:
+*                 type: array
+*                 items:
+*                  type: object
+*/
+router.get('/user/dadosUser/:id', getDadosUser);
 
 /** 
 @swagger
