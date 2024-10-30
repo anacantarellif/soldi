@@ -16,14 +16,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
         if (results.success) {
             console.log(results)
 
-            const pontos = localStorage.getItem("nome")
-            console.log(nome)
+            let Nome = document.getElementById('nome');
+            Nome.innerHTML = results.data.nome; 
 
-            let spanPontos = document.getElementById('pontos')
-            spanPontos.innerHTML = pontos; 
+            let dataCriacao = document.getElementById('criacao');
+            dataCriacao.innerHTML = results.data.nome; 
 
-            let spantitulo = document.getElementById('nome')
-            spantitulo.innerHTML = titulo;
+
+            // let spantitulo = document.getElementById('nome')
+            // spantitulo.innerHTML = titulo;
 
 
         } else {

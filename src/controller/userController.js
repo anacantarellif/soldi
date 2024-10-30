@@ -120,7 +120,7 @@ async function getDadosUser(req, res) {
         req.params.id
     )
 
-    const query = "SELECT nome, sobrenome, nascimento, email, celular, senha FROM usuarios WHERE id = ?;";
+    const query = "SELECT * FROM usuarios WHERE id = ?;";
 
     connection.query(query, params, (err, results) => {
         console.log(err, results)

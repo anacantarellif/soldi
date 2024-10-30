@@ -13,6 +13,6 @@ create table usuarios(
     nivel int default 1,
     sequencia_dias int default 0,
     pontos int default 0,
-    create_at timestamp default current_timestamp,
+    created_at date,
     update_at timestamp default current_timestamp
 );
