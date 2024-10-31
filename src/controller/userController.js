@@ -143,6 +143,51 @@ async function getDadosUser(req, res) {
         }) 
 }
 
+async function updateUser(request, response) {
+    const { nome, sobrenome, nascimento, celular, email, senha } = request.body;
+    const userId = request.params.id;
+
+    const query = "UPDATE usuarios SET nome = ?, sobrenome = ?, nascimento = ?, celular = ?, email = ?, senha = ? WHERE id = ?";
+    const params = [nome, sobrenome, nascimento, celular, email, senha, userId];
+
+    connection.query(query, params, (err, results) => {
+        if (err) {
+            console.error('Erro ao atualizar usuário:', err);
+            return response.status(500).json({ success: false, message: "Erro ao atualizar os dados.", data: err });
+        }
+
+        response.status(200).json({ success: true, message: "Dados atualizados com sucesso!", data: results });
+    });
+}
+
+async function getDataUser(req, res) {
+
+    const params = Array(
+        req.body.id
+    )
+
+    const query = 'SELECT DATE(created_at) FROM usuarios WHERE id = ?';
+
+    console.log(query)
+
+    connection.query(query, (err, results) => {
+        if (err) {
+            console.error('Erro ao buscar data de criação:', err);
+            return res.status(500).json({
+                success: false,
+                message: 'Erro ao recuperar a data de criação.',
+                data: err
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: 'Ranking recuperado com sucesso.',
+            data: results
+        });
+    });
+}
+
 async function getRanking(req, res) {
     const query = 'SELECT id, nome, pontos FROM usuarios ORDER BY pontos DESC';
 
@@ -169,5 +214,7 @@ module.exports = {
     storeUser,
     getDados,
     getDadosUser,
+    updateUser,
+    getDataUser,
     getRanking 
 };

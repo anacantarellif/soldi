@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Configurações</title>
     <link rel="stylesheet" href="perfil.css">
 </head>
 <body>
     <header>
         <h1>Configurações</h1>
-        <p>Salvar</p>
+        <button id="salvar">Salvar</button>
     </header>
     <main>
         <section class="central">
-            <img class="fotoPerfil" src="img/undraw_female_avatar_efig 1.svg" alt="">
-            <div class="pComIcone" >
+            <img class="fotoPerfil" src="img/undraw_female_avatar_efig 1.svg" alt="Foto de Perfil">
+            <div class="pComIcone">
                 <img src="img/Vector.svg" alt="">
                 <p>Mudar foto de perfil</p>
             </div>
@@ -22,15 +22,15 @@
         <section class="dados">
             <h2>Dados da Conta</h2>
             <div class="campos">
-                <input type="email" placeholder="Email" class="email" required>
-                <input type="number" placeholder="Celular" class="celular" required>
-                <input type="password" placeholder="Senha" class="senha" required>
-                <input type="email" placeholder="Email" class="email" required>
-                <input type="number" placeholder="Celular" class="celular" required>
-                <input type="password" placeholder="Senha" class="senha" required>
+                <input type="text" id="nome" placeholder="Nome" required>
+                <input type="text" id="sobrenome" placeholder="Sobrenome" required>
+                <input type="text" id="nascimento" placeholder="Data de nascimento" required>
+                <input type="text" id="celular" placeholder="Celular" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="senha" placeholder="Senha" required>
             </div>
         </section>
-
     </main>
+    <script src="configuracoes.js"></script>
 </body>
 </html>
