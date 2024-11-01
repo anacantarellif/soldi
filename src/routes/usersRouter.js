@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const{storeUser, storeConteudo, storeID, getDados, getDadosUser, updateUser, getDataUser, getRanking} = require('../controller/userController')
+const{storeUser, storeConteudo, getDadosConteudo, storeID, getDados, getDadosUser, updateUser, getDataUser, getRanking} = require('../controller/userController')
 
 // router.get('/pontos/:id', getPontos)
 
@@ -36,9 +36,26 @@ router.post('/user/create', storeUser);
 *                schema:
 *                 type: array
 *                 items:
-*                  type: objectselect * from usuarios;
+*                  type: object select * from usuarios;
 */
 router.post('/conteudo/create', storeConteudo);
+
+/** 
+@swagger
+*     /conteudo/dados/:
+*     get:
+*         summary: Pega as informações do usuário
+*     responses:
+*     200:
+*         description: Sucesso
+*         content:
+*             application/json:
+*                schema:
+*                 type: array
+*                 items:
+*                  type: object
+*/
+router.get('/conteudo/dados/', getDadosConteudo);
 
 /** 
 @swagger

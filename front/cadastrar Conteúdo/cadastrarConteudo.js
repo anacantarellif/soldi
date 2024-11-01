@@ -3,7 +3,7 @@ let button = document.getElementById("handleSubmit");
 button.onclick = async function(e) {
     e.preventDefault(); 
 
-    let titulo = document.querySelector('.cadastro .titulo').value;
+    let titulo = document.querySelector('.cadastro .input-titulo').value;
     let imagem = document.querySelector('.cadastro .imagem').value;
     let texto = document.querySelector('.cadastro .texto').value;
 

@@ -121,6 +121,35 @@ async function storeID(request, response){
     })
 }
 
+async function getDadosConteudo(req, res) {
+    
+    const params = Array(
+        req.body.id
+    )
+
+    const query = "SELECT * FROM conteudos;";
+
+    connection.query(query, params, (err, results) => {
+        console.log(err, results)
+        if (results.length > 0) {
+                res
+                    .status(200)
+                    .json({
+                        success: true,
+                        message: "Pegou nivel e pontos",
+                        data: results[0]
+                    })
+            } else {
+                res
+                    .status(400)
+                    .json({
+                        success: false,
+                        message: "Deu errado",
+                    })
+            }
+        }) 
+}
+
 async function getDados(req, res) {
     
     const params = Array(
@@ -249,6 +278,7 @@ module.exports = {
     storeID,
     storeUser,
     storeConteudo,
+    getDadosConteudo,
     getDados,
     getDadosUser,
     updateUser,
