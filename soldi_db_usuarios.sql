@@ -25,3 +25,45 @@ SELECT DATE(created_at) FROM usuarios WHERE id = 1;
 drop table usuarios;
 
 select * from usuarios;
+
+
+create database soldi_db;
+ use soldi_db;
+
+create table usuarios( 
+id int primary key auto_increment, 
+nome varchar(255), 
+sobrenome varchar(255), 
+nascimento date, 
+celular int null,
+email varchar(255) unique not null, 
+senha int not null, 
+perfil varchar(255) null, 
+foto varchar(255), 
+nivel int default 1, 
+sequencia_dias int default 0, 
+pontos int default 0,
+criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+create table conteudos(
+	id int primary key auto_increment,
+    titulo varchar(255) null, 
+    imagem varchar(255) default null,
+    texto varchar(1000) null
+);
+
+select * from usuarios;
+select * from conteudos;
+
+
+
+
+drop table usuarios;
+drop table conteudos;
+
+
+
+
+
+

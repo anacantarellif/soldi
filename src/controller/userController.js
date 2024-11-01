@@ -40,6 +40,42 @@ async function storeUser(request, response){
     })
 }
 
+async function storeConteudo(request, response){
+    console.log("aqui")
+
+    //recuperar dados do forms
+    const params = Array(
+        request.body.titulo,
+        request.body.imagem,
+        request.body.texto
+    );
+        console.log("aqui")
+    //comando no banco para colocar as informações do formulário para o banco
+    const query = "INSERT INTO conteudos(titulo, imagem, texto) VALUES(?,?,?)";
+
+    //testando o banco
+    connection.query(query, params, (err, results) => {
+        console.log(err, results)
+        if (results) {
+            response
+                .status(200)
+                .json({
+                    success: true,
+                    message: 'Sucesso!',
+                    data: results
+                })
+        }else{
+            response
+                .status(400)
+                .json({
+                    success: false,
+                    message: 'Sem sucesso!',
+                    data: err
+                })
+        }
+    })
+}
+
 async function storeID(request, response){
 
     let params = []
@@ -212,6 +248,7 @@ async function getRanking(req, res) {
 module.exports = {
     storeID,
     storeUser,
+    storeConteudo,
     getDados,
     getDadosUser,
     updateUser,
