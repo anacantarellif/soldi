@@ -127,6 +127,11 @@ footer{
     border: solid 1.9px;
 }
 
+a{
+    text-decoration: none;
+    color: var(--branco);
+}
+
 .central{
     display: flex;
     flex-direction: column;

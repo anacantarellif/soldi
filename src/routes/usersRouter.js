@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const{storeUser, storeConteudo, getDadosConteudo, storeID, getDados, getDadosUser, updateUser, getDataUser, getRanking} = require('../controller/userController')
+const{storeUser, storeConteudo, getDadosConteudo, storeID, getDados, getDadosUser, getConteudo, updateUser, getDataUser, getRanking} = require('../controller/userController')
 
 // router.get('/pontos/:id', getPontos)
 
@@ -141,6 +141,23 @@ router.put('/user/updateUser/:id', updateUser);
 *                  type: object
 */
 router.get('/user/data/:id', getDataUser);
+
+/** 
+@swagger
+*     /conteudo/:
+*     get:
+*         summary: Pega os conteudos
+*     responses:
+*     200:
+*         description: Sucesso
+*         content:
+*             application/json:
+*                schema:
+*                 type: array
+*                 items:
+*                  type: object
+*/
+router.get('/user/data/:id', getConteudo);
 
 /** 
 @swagger

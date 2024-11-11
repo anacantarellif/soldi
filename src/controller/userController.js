@@ -253,6 +253,64 @@ async function getDataUser(req, res) {
     });
 }
 
+async function getConteudo(req, res) {
+
+    const params = Array(
+        req.body.id
+    )
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        const response = await fetch('http://localhost:3000/api/get/restaurantes');
+        const result = await response.json();
+    
+        console.log(result);
+    
+        // <div class="restaurante-card">
+        //     <img src="restaurante1.jpg" alt="Restaurante 1">
+        //     <div class="info">
+        //         <h2>Restaurante 1</h2>
+        //         <p>Endereço: Rua Exemplo, 123</p>
+        //         <p>Telefone: (11) 1234-5678</p>
+        //     </div>
+        // </div>
+    
+        if(result.success) {
+            const restaurantesList = document.querySelector('.restaurantes-list');
+            result.data.forEach(restaurante => {
+                const card = document.createElement('div');
+                card.className = 'restaurante-card';
+    
+                const img = document.createElement('img');
+                img.src = restaurante.imagem;
+    
+                const infoDiv = document.createElement('div');
+                infoDiv.className = 'info';
+    
+                const nome = document.createElement('h2');
+                nome.textContent = restaurante.nome;
+    
+                const endereco = document.createElement('p');
+                endereco.textContent = restaurante.endereco;
+                
+                const telefone = document.createElement('p');
+                telefone.textContent = restaurante.telefone;
+    
+                infoDiv.appendChild(nome);
+                infoDiv.appendChild(endereco);
+                infoDiv.appendChild(telefone);
+    
+                card.appendChild(img);
+                card.appendChild(infoDiv);
+    
+                restaurantesList.appendChild(card);
+            });
+        }
+    });
+}
+
+
+
+
 async function getRanking(req, res) {
     const query = 'SELECT id, nome, pontos FROM usuarios ORDER BY pontos DESC';
 
@@ -281,6 +339,7 @@ module.exports = {
     getDadosConteudo,
     getDados,
     getDadosUser,
+    getConteudo,
     updateUser,
     getDataUser,
     getRanking 
