@@ -220,9 +220,9 @@ async function nextLevel() {
 
     console.log(response.data);
 
-    //converter de volta para json
-
     console.log(Pontos_user);
+
+    console.log(Nivel_user)
     
     if (Nivel_user == 1) {
         window.location.href = "../home.html"

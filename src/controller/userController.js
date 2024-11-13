@@ -80,19 +80,20 @@ async function storeID(request, response){
 
     let params = []
     console.log(params)
-    // if (request.body.Nivel_atual>=request.body.Nivel_user){
+
+    if (request.body.Nivel_atual>=request.body.Nivel_user){
         params = Array(
                 nivel = Number(request.body.Nivel_user) + 1,
                 pontos = Number(request.body.Pontos_user) + 10,
                 Number(request.body.Id_user)  
             );
-    // }else{
-    //     params = Array(
-    //         nivel = Number(request.body.Nivel_user),
-    //         pontos = Number(request.body.Pontos_user) + 10,
-    //         Number(request.body.Id_user)  
-    //     );
-    // }
+    }else{
+        params = Array(
+            nivel = Number(request.body.Nivel_user),
+            pontos = Number(request.body.Pontos_user) + 10,
+            Number(request.body.Id_user)  
+        );
+    }
 
     console.log(params)
 
@@ -309,8 +310,6 @@ async function getConteudo(req, res) {
         }
     });
 }
-
-
 
 async function getRanking(req, res) {
     const query = 'SELECT id, nome, pontos FROM usuarios ORDER BY pontos DESC';

@@ -148,7 +148,7 @@ async function nextLevel() {
 
     const resultsDados = await responseDados.json();
     console.log(resultsDados)
-
+    
     //pegar os dados do localstorage
     let Id_user = localStorage.getItem('usuarioId');
     let Nivel_user = resultsDados.data.nivel;
@@ -170,6 +170,10 @@ async function nextLevel() {
 
     console.log(response.data);
 
+    //converter de volta para json
+
+    console.log(Pontos_user);
+    
     if (Nivel_user == 1) {
         window.location.href = "../home.html"
     } else if (Nivel_user == 2 ) {
@@ -177,4 +181,5 @@ async function nextLevel() {
     } else {
         window.location.href = "../home3.html"
     }
+
 }
