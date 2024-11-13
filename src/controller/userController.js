@@ -80,19 +80,21 @@ async function storeID(request, response){
 
     let params = []
     console.log(params)
-    if (request.body.Nivel_atual>=request.body.Nivel_user){
+    // if (request.body.Nivel_atual>=request.body.Nivel_user){
         params = Array(
                 nivel = Number(request.body.Nivel_user) + 1,
                 pontos = Number(request.body.Pontos_user) + 10,
                 Number(request.body.Id_user)  
             );
-    }else{
-        params = Array(
-            nivel = Number(request.body.Nivel_user),
-            pontos = Number(request.body.Pontos_user) + 10,
-            Number(request.body.Id_user)  
-        );
-    }
+    // }else{
+    //     params = Array(
+    //         nivel = Number(request.body.Nivel_user),
+    //         pontos = Number(request.body.Pontos_user) + 10,
+    //         Number(request.body.Id_user)  
+    //     );
+    // }
+
+    console.log(params)
 
     // //comando no banco para colocar as informações do formulário para o banco
     const query = "UPDATE usuarios set nivel = ?, pontos = ? where id = ?";
@@ -307,7 +309,6 @@ async function getConteudo(req, res) {
         }
     });
 }
-
 
 
 

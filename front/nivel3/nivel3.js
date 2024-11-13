@@ -125,9 +125,7 @@ mostrarPergunta(perguntas[indicePerguntaAtual]);
 // Inicializar barra de progresso
 atualizarBarraProgresso();
 
-async function nextLevel(event) {
-    event.preventDefault();
-    
+async function nextLevel() {    
     
     let id = localStorage.getItem('usuarioId');
     let dataDados = {id}
