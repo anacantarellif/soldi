@@ -125,7 +125,9 @@ mostrarPergunta(perguntas[indicePerguntaAtual]);
 // Inicializar barra de progresso
 atualizarBarraProgresso();
 
-async function nextLevel() {
+async function nextLevel(event) {
+    event.preventDefault();
+    
     
     let id = localStorage.getItem('usuarioId');
     let dataDados = {id}
@@ -136,8 +138,11 @@ async function nextLevel() {
         body: JSON.stringify(dataDados)
     });
 
+
     const resultsDados = await responseDados.json();
     console.log(resultsDados)
+
+
     
     //pegar os dados do localstorage
     let Id_user = localStorage.getItem('usuarioId');
@@ -158,18 +163,19 @@ async function nextLevel() {
         body: JSON.stringify(data)
     });
 
-    console.log(response.data);
-
     //converter de volta para json
 
-    console.log(Pontos_user);
-    
-    if (Nivel_user == 1) {
-        window.location.href = "../home.html"
-    } else if (Nivel_user == 2 ) {
-        window.location.href = "../home2.html"
-    } else {
-        window.location.href = "../home3.html"
+
+    if (Nivel_atual>=Nivel_user){
+        window.location.href = "../conquista/conquista.html"
+    }else{
+        if (Nivel_user == 1) {
+            window.location.href = "../home.html"
+        } else if (Nivel_user == 2 ) {
+            window.location.href = "../home2.html"
+        } else {
+            window.location.href = "../home3.html"
+        }
     }
 
 }

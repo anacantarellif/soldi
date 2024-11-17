@@ -7,6 +7,6 @@ botaoCarrossel.addEventListener('click', () => {
         indiceAtual++;
         document.querySelector('.carrossel-slides').style.transform = `translateX(-${indiceAtual * (100 + parseFloat(getComputedStyle(slides[indiceAtual]).marginRight) / parseFloat(getComputedStyle(slides[indiceAtual]).width) * 100)}%)`;
     } else {
-        window.location.href = '../home.html';
+        window.location.href = '../cadastrar.html';
     }
 });

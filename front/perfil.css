@@ -184,5 +184,16 @@ main{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: left;
     gap: 0.2rem;
+}
+
+.laranja{
+    color: var(--laranja);
+}
+
+#salvar{
+    background-color: transparent;
+    color: var(--laranja);
+    border: transparent;
 }

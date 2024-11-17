@@ -30,9 +30,22 @@
 
 
   
-document.addEventListener("DOMContentLoaded", (event) => {
-    event.preventDefault();
+// document.addEventListener("DOMContentLoaded", (event) => {
+//     event.preventDefault();
 
+//     async function getDados () {
+    
+//         const pontos = localStorage.getItem("usuarioPontos")
+//         console.log(pontos)
+
+//         let spanPontos = document.getElementById('pontos')
+//         spanPontos.innerHTML = pontos; 
+//     }
+//     getDados()
+
+//   });
+
+  document.addEventListener("DOMContentLoaded", (event) => {
     async function getDados () {
     
         const pontos = localStorage.getItem("usuarioPontos")
@@ -42,10 +55,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         spanPontos.innerHTML = pontos; 
     }
     getDados()
-
   });
-
-
 
 
 
